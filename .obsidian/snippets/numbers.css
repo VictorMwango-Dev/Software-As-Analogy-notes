@@ -1,0 +1,30 @@
+@media print {
+    /* Establish the page counter */
+    @page {
+        size: A4;
+        margin: 20mm 20mm 25mm 20mm;
+        
+        /* Bottom Right corner: Stylized page number */
+        @bottom-right {
+            content: "Page " counter(page);
+            font-family: 'Inter', 'Helvetica Neue', sans-serif;
+            font-size: 9pt;
+            color: #000000;
+            font-weight: 500;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 8px;
+        }
+
+        /* Bottom Left corner: Custom Document Title */
+        @bottom-left {
+            content: "Software as Analogy (SaA)";
+            font-family: 'Inter', 'Helvetica Neue', sans-serif;
+            font-size: 8.5pt;
+            color: #555555;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 8px;
+        }
+    }
+}

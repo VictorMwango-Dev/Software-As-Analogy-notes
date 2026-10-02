@@ -1,0 +1,42 @@
+{
+  "settingsVersion": 5,
+  "width": 800,
+  "scale": "2x",
+  "format": "png",
+  "showFilename": true,
+  "showMetadata": false,
+  "themeMode": "current",
+  "settleTimeoutMs": 8000,
+  "quickExportSelection": false,
+  "autoRerenderPreview": true,
+  "locale": "auto",
+  "padding": {
+    "top": 40,
+    "right": 36,
+    "bottom": 40,
+    "left": 36
+  },
+  "embedMaxHeight": 360,
+  "embedAlign": "left",
+  "split": {
+    "mode": "hr",
+    "height": 1131
+  },
+  "watermark": {
+    "enable": false,
+    "type": "text",
+    "text": "Watermark",
+    "fontSize": 22,
+    "color": "#888888",
+    "imageSrc": "",
+    "opacity": 0.15,
+    "rotate": 30
+  },
+  "author": {
+    "show": false,
+    "name": "Your Name",
+    "remark": "The Description",
+    "avatarSrc": "",
+    "align": "right"
+  }
+}

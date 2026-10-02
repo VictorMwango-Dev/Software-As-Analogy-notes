@@ -1,0 +1,31 @@
+/* Apply Times New Roman to the entire document */
+body, .markdown-rendered, .markdown-source-view.mod-cm6 .cm-content {
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 15pt !important;
+    line-height: 1.5;
+}
+
+/* Question Tags (using H1, H2, and H3 headers) */
+h1, h2, h3, .markdown-rendered h1, .markdown-rendered h2, .markdown-rendered h3 {
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 15pt !important;
+    font-weight: bold;
+    color: inherit;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Ensure paragraph text, lists, and tables stay at font 15 */
+p, li, td, th, span {
+    font-size: 15pt !important;
+}
+
+/* Optional: Styling for your "Blue Tips" / Callouts in Obsidian */
+.callout {
+    font-size: 15pt !important;
+}
+
+.callout-title {
+    font-size: 15pt !important;
+    font-weight: bold;
+}
