@@ -123,12 +123,14 @@
             "id": "80548352c4ed951f",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.13.7"
+                "file": "KUBERNETES.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.13.7"
+              "icon": "lucide-file",
+              "title": "KUBERNETES"
             }
           },
           {
@@ -349,7 +351,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b8032a40c7bab9a2",
+  "active": "80548352c4ed951f",
   "lastOpenFiles": [
     "README.md",
     "New Text Document.gitignore",

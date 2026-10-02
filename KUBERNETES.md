@@ -1,3 +1,7 @@
+---
+publish_to_linkedin: true
+summary: "Ever wondered how Kubernetes works? Imagine managing a massive hospital... 🏥 Here is a breakdown of container orchestration using a simple real-world analogy. #Kubernetes #DevOps #SoftwareEngineering"
+---
 <h3 style="text-align: center;">KUBERNETES</h3>
 
 # Kubernetes Explained Using a Hospital Analogy 🏥
