@@ -1,0 +1,61 @@
+name: Publish Ready Notes to LinkedIn
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  linkedin-share:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: pip install requests pyyaml python-frontmatter
+
+      - name: Check and Post to LinkedIn
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+        run: |
+          python -c "
+          import os, glob, requests, frontmatter
+
+          token = os.environ.get('LINKEDIN_ACCESS_TOKEN')
+          author = os.environ.get('LINKEDIN_PERSON_URN')
+          headers = {
+              'Authorization': f'Bearer {token}',
+              'Content-Type': 'application/json',
+              'X-Restli-Protocol-Version': '2.0.0'
+          }
+
+          for filepath in glob.glob('**/*.md', recursive=True):
+              try:
+                  post = frontmatter.load(filepath)
+                  if post.get('publish_to_linkedin') == True:
+                      content = post.get('summary') or post.content
+                      
+                      payload = {
+                          'author': author,
+                          'lifecycleState': 'PUBLISHED',
+                          'specificContent': {
+                              'com.linkedin.ugc.ShareContent': {
+                                  'shareCommentary': {'text': content},
+                                  'shareMediaCategory': 'NONE'
+                              }
+                          },
+                          'visibility': {'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC'}
+                      }
+
+                      res = requests.post('https://api.linkedin.com/v2/ugcPosts', headers=headers, json=payload)
+                      print(f'Publishing {filepath}: Status {res.status_code}')
+              except Exception as e:
+                  print(f'Error processing {filepath}: {e}')
+          "
