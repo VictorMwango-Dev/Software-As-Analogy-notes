@@ -1,0 +1,6 @@
+# Ignore Obsidian workspace layout changes
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Ignore zip files or temporary exports
+*.zip

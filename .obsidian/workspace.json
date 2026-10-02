@@ -345,11 +345,15 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "80548352c4ed951f",
+  "active": "b8032a40c7bab9a2",
   "lastOpenFiles": [
+    "README.md",
+    "New Text Document.gitignore",
+    "New Text Document.txt",
     "cybersecurity projects.md",
     "cybersecurity projects proposal.md",
     "Assignment information policy and compliance.md",
