@@ -184,9 +184,23 @@
               "icon": "lucide-file",
               "title": "New tab"
             }
+          },
+          {
+            "id": "ab61a6c6e96f3392",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "microservices.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "microservices"
+            }
           }
         ],
-        "currentTab": 8
+        "currentTab": 13
       }
     ],
     "direction": "vertical"
@@ -351,8 +365,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "80548352c4ed951f",
+  "active": "ab61a6c6e96f3392",
   "lastOpenFiles": [
+    "microservices.md",
+    "KUBERNETES.md",
     "README.md",
     "New Text Document.gitignore",
     "New Text Document.txt",
@@ -360,7 +376,6 @@
     "cybersecurity projects proposal.md",
     "Assignment information policy and compliance.md",
     "DOCKER.md",
-    "KUBERNETES.md",
     "PROMETHEUS AND GRAFANA.md",
     "CIRCUIT BREAKERS.md",
     "READS AND WRITES.md",
