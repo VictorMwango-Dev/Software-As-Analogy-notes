@@ -198,9 +198,23 @@
               "icon": "lucide-file",
               "title": "CIRCUIT BREAKERS"
             }
+          },
+          {
+            "id": "6277d91d4cec916a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "chaos engineering.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "chaos engineering"
+            }
           }
         ],
-        "currentTab": 13
+        "currentTab": 14
       }
     ],
     "direction": "vertical"
@@ -365,8 +379,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ab61a6c6e96f3392",
+  "active": "6277d91d4cec916a",
   "lastOpenFiles": [
+    "chaos engineering.md",
+    "CIRCUIT BREAKERS.md",
     "microservices.md",
     "KUBERNETES.md",
     "README.md",
@@ -377,7 +393,6 @@
     "Assignment information policy and compliance.md",
     "DOCKER.md",
     "PROMETHEUS AND GRAFANA.md",
-    "CIRCUIT BREAKERS.md",
     "READS AND WRITES.md",
     "READS_AND_WRITES.zip",
     "Untitled 1.md",
