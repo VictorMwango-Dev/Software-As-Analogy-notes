@@ -191,12 +191,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "microservices.md",
+                "file": "CIRCUIT BREAKERS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "microservices"
+              "title": "CIRCUIT BREAKERS"
             }
           }
         ],
