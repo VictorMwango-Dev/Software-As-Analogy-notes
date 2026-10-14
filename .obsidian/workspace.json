@@ -282,7 +282,7 @@
             }
           }
         ],
-        "currentTab": 19
+        "currentTab": 15
       }
     ],
     "direction": "vertical"
@@ -341,8 +341,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "d07691c920c24850",
@@ -448,7 +447,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f8ff35655ee137e4",
+  "active": "054f9007c5c66a5b",
   "lastOpenFiles": [
     "flow animation guide.md",
     "video workbook.md",

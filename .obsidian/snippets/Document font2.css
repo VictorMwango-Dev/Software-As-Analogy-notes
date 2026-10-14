@@ -1,31 +1,131 @@
-/* Apply Times New Roman to the entire document */
-body, .markdown-rendered, .markdown-source-view.mod-cm6 .cm-content {
-    font-family: "Times New Roman", Times, serif !important;
-    font-size: 15pt !important;
-    line-height: 1.5;
-}
+import type {QuizQuestion} from './Quiz';
 
-/* Question Tags (using H1, H2, and H3 headers) */
-h1, h2, h3, .markdown-rendered h1, .markdown-rendered h2, .markdown-rendered h3 {
-    font-family: "Times New Roman", Times, serif !important;
-    font-size: 15pt !important;
-    font-weight: bold;
-    color: inherit;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-/* Ensure paragraph text, lists, and tables stay at font 15 */
-p, li, td, th, span {
-    font-size: 15pt !important;
-}
-
-/* Optional: Styling for your "Blue Tips" / Callouts in Obsidian */
-.callout {
-    font-size: 15pt !important;
-}
-
-.callout-title {
-    font-size: 15pt !important;
-    font-weight: bold;
-}
+export const questions: QuizQuestion[] = [
+  {
+    category: 'CSS · Margins',
+    question: 'How far apart are .a and .b?',
+    code: `.a { margin-bottom: 30px; }
+.b { margin-top: 20px; }
+/* block siblings, .a above .b */`,
+    highlight: 1,
+    options: ['50px', '30px', '20px', '10px'],
+    answer: 1,
+    explanation: 'Adjoining vertical margins collapse to the larger one, not the sum.',
+  },
+  {
+    category: 'CSS · Specificity',
+    question: 'What color is the text?',
+    code: `<p class="a b" id="x">Hi</p>
+p { color: red; }
+.a.b { color: green; }
+#x { color: blue; }
+.a { color: orange !important; }`,
+    highlight: 5,
+    options: ['red', 'green', 'blue', 'orange'],
+    answer: 3,
+    explanation: '!important beats any normal rule, even an ID selector.',
+  },
+  {
+    category: 'CSS · Box Model',
+    question: 'How wide is .box on screen?',
+    code: `.box {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid;
+}`,
+    highlight: 3,
+    options: ['200px', '240px', '250px', '225px'],
+    answer: 2,
+    explanation: 'Default content-box: 200 + 20 + 20 + 5 + 5 = 250px. border-box would keep it at 200px.',
+  },
+  {
+    category: 'CSS · z-index',
+    question: 'The two overlap. Which is on top?',
+    code: `.a { z-index: 10; }
+.b { position: relative; z-index: 1; }
+/* plain block siblings that overlap */`,
+    highlight: 1,
+    options: ['.a', '.b', 'Whichever is later in HTML', 'Neither, they cannot overlap'],
+    answer: 1,
+    explanation: 'z-index does nothing on a static element. Positioned .b paints above it.',
+  },
+  {
+    category: 'CSS · Units',
+    question: 'What is the font size of .child?',
+    code: `html { font-size: 10px; }
+.parent { font-size: 2em; }
+.child { font-size: 2em; }
+/* .child is inside .parent */`,
+    highlight: 3,
+    options: ['10px', '20px', '40px', '4px'],
+    answer: 2,
+    explanation: 'em compounds: 2em of the parent’s 20px is 40px. rem would always use the root.',
+  },
+  {
+    category: 'CSS · Percentages',
+    question: 'How tall is the top padding of .child?',
+    code: `.container { width: 400px; height: 100px; }
+.child { padding-top: 10%; }`,
+    highlight: 2,
+    options: ['10px', '40px', '100px', '4px'],
+    answer: 1,
+    explanation: 'Percentage padding is based on the container’s WIDTH, even for top and bottom.',
+  },
+  {
+    category: 'CSS · Flexbox',
+    question: 'How wide is each .item?',
+    code: `.row { display: flex; width: 300px; }
+.item { width: 200px; }
+/* two .item children, short text */`,
+    highlight: 2,
+    options: ['200px, overflowing', '150px', '100px', '300px'],
+    answer: 1,
+    explanation: 'flex-shrink defaults to 1, so both items shrink equally to fit: 150px each.',
+  },
+  {
+    category: 'CSS · Selectors',
+    question: 'Which text turns red?',
+    code: `<div>
+  <h1>A</h1>
+  <p>B</p>
+  <p>C</p>
+</div>
+p:nth-child(2) { color: red; }`,
+    highlight: 6,
+    options: ['B', 'C', 'B and C', 'None'],
+    answer: 0,
+    explanation: ':nth-child counts all siblings. B is the 2nd child and a p. C is the 3rd.',
+  },
+  {
+    category: 'CSS · Positioning',
+    question: 'Where does .child go?',
+    code: `.parent { /* no position set */ }
+.child {
+  position: absolute;
+  top: 0;
+  right: 0;
+}`,
+    highlight: 3,
+    options: [
+      'Top-right of .parent',
+      'Top-right of the page',
+      'Top-right of the grandparent',
+      'Stays in normal flow',
+    ],
+    answer: 1,
+    explanation: 'With no positioned ancestor it uses the page. Add position: relative to .parent.',
+  },
+  {
+    category: 'CSS · Display',
+    question: 'What size is the span?',
+    code: `span {
+  display: inline;
+  width: 200px;
+  height: 100px;
+}`,
+    highlight: 3,
+    options: ['200 × 100', 'Only height applies', 'Width and height ignored', 'Only width applies'],
+    answer: 2,
+    explanation: 'Width and height do not apply to inline boxes. Use inline-block or block.',
+  },
+];
