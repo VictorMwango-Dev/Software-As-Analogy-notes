@@ -282,7 +282,7 @@
             }
           }
         ],
-        "currentTab": 19
+        "currentTab": 17
       }
     ],
     "direction": "vertical"
@@ -447,10 +447,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f8ff35655ee137e4",
+  "active": "ebe9ae9d39423109",
   "lastOpenFiles": [
-    "jenkins.md",
     "flow animation guide.md",
+    "jenkins.md",
     "video workbook.md",
     "json.md",
     "chaos engineering.md",
