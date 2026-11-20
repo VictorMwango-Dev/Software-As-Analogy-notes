@@ -3,5 +3,6 @@
     "Document font",
     "Document font2",
     "numbers"
-  ]
+  ],
+  "showRibbon": true
 }
